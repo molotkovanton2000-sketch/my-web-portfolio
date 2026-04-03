@@ -1,0 +1,77 @@
+@use "sass:color";
+
+// Брейкпоинты (точки перелома)
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+@mixin tablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$breakpoint-mobile}) {
+        @content;
+    }
+}
+
+$primary-color: #2c3e50;
+$text-color: #34495e;
+$background: #f5f5f5;
+$font-stack: Arial, sans-serif;
+
+// Глобальные стили
+body {
+    font-family: $font-stack;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: $background;
+}
+
+// Вложенность (как в HTML)
+h1 {
+    color: $primary-color;
+    
+    // & означает "родительский селектор" (h1:hover)
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: $text-color;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    color: color.adjust($text-color, $lightness: 20%);
+}
+
+body {
+    padding: 20px;
+    
+    @include tablet {
+        padding: 15px;
+    }
+    
+    @include mobile {
+        padding: 10px;
+    }
+}
+
+h1 {
+    font-size: 2rem;
+    
+    @include tablet {
+        font-size: 1.5rem;
+    }
+    
+    @include mobile {
+        font-size: 1.2rem;
+    }
+}
