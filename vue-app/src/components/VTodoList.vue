@@ -25,6 +25,10 @@ const addTodo = () => {
 const removeTodo = (id) => {
     todos.value = todos.value.filter(todo => todo.id !== id)
 }
+
+const clearCompleted = () => {
+    todos.value = todos.value.filter(todo => todo.done === false)
+}
 </script>
 
 <template>
@@ -39,14 +43,18 @@ const removeTodo = (id) => {
             />
             <button class="button" @click="addTodo">➕ Добавить</button>
         </div>
-        <ul>
+        <div v-if="todos.length === 0">🎉 Поздравляю! Все задачи выполнены.</div>
+        <ul v-else>
             <li :class="{ completed : todo.done}" v-for="todo in todos" :key="todo.id">
                 <input type="checkbox" :checked="todo.done" @change="todo.done = !todo.done" />
                 {{ todo.text }}
                 <button @click="removeTodo(todo.id)">❌</button>
             </li>
         </ul>
+        <p>Выполнено: {{ todos.filter(todo => todo.done).length }}  из {{ todos.length }}</p>
+        <button class="clearCompleted" @click="clearCompleted">Очистить список от выполненных задач</button>
     </div>
+    
 </template>
 
 <style lang="scss" scoped>
