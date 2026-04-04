@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import VCounter from './components/VCounter.vue'
+import VTodoList from './components/VTodoList.vue'
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import VCounter from './components/VCounter.vue'
 
   <main>
     <VCounter />
+    <VTodoList/>
   </main>
 </template>
 
