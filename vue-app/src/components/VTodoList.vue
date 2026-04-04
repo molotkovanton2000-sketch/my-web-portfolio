@@ -36,6 +36,14 @@ const markAllCompleted = () => {
     })
 }
 
+const completedFirst = () => {
+    todos.value.sort((a, b) => b.done - a.done)
+}
+
+const uncompletedFirst = () => {
+    todos.value.sort((a, b) => a.done - b.done)
+}
+
 </script>
 
 <template>
@@ -61,6 +69,8 @@ const markAllCompleted = () => {
         <p>Выполнено: {{ todos.filter(todo => todo.done).length }}  из {{ todos.length }}</p>
         <button class="action-btn clearCompleted" @click="clearCompleted">Очистить список от выполненных задач</button>
         <button class="action-btn markAllCompleted" @click="markAllCompleted">✔ Отметить всё</button>
+        <button class="action-btn completedFirst" @click="completedFirst">Сначала выполненные</button>
+        <button class="action-btn uncompletedFirst" @click="uncompletedFirst">Сначала невыполненные</button>
     </div>
     
 </template>
@@ -151,6 +161,24 @@ li button {
         opacity: 1;
         background-color: rgba(0, 0, 0, 0.05);
         transform: none;
+    }
+}
+
+.completedFirst {
+    background-color: #9b59b6;
+    color: white;
+
+    &:hover {
+        background-color: #8e44ad;
+    }
+}
+
+.uncompletedFirst {
+    background-color: #f39c12;
+    color: white;
+
+    &:hover {
+        background-color: #e67e22;
     }
 }
 </style>
