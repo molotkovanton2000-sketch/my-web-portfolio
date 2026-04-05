@@ -1,50 +1,56 @@
 <script setup>
-/*
-import VCounter from './components/VCounter.vue'
-import VTodoList from './components/VTodoList.vue'
-import VPostsList from './components/VPostsList.vue'
-*/
-import VUsersList from './components/VUsersList.vue'
 </script>
 
 <template>
-  <header>
-    
-  </header>
+    <div class="app">
+        <!-- Навигация -->
+        <nav class="navbar">
+            <router-link to="/" class="nav-link">Главная</router-link>
+            <router-link to="/posts" class="nav-link">Посты</router-link>
+            <router-link to="/users" class="nav-link">Пользователи</router-link>
+        </nav>
 
-  <main>
-    <VCounter />
-    <VTodoList/>
-    <VPostsList/>
-    <VUsersList/>
-  </main>
+        <!-- Здесь будет отображаться текущая страница -->
+        <main class="main-content">
+            <router-view />
+        </main>
+    </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.app {
+    min-height: 100vh;
+    background-color: #f5f5f5;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.navbar {
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+    &:hover {
+        background-color: #34495e;
+    }
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+/* Активная ссылка (подсветка) */
+.router-link-active {
+    background-color: #42b983;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 </style>
