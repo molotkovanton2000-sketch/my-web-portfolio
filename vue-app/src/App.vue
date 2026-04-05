@@ -1,20 +1,18 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import VCounter from './components/VCounter.vue'
 import VTodoList from './components/VTodoList.vue'
+import VPostsList from './components/VPostsList.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <div class="wrapper">
-      <HelloWorld msg="Hello world!" />
-    </div>
+    
   </header>
 
   <main>
     <VCounter />
     <VTodoList/>
+    <VPostsList/>
   </main>
 </template>
 
