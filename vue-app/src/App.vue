@@ -1,7 +1,10 @@
 <script setup>
+/*
 import VCounter from './components/VCounter.vue'
 import VTodoList from './components/VTodoList.vue'
 import VPostsList from './components/VPostsList.vue'
+*/
+import VUsersList from './components/VUsersList.vue'
 </script>
 
 <template>
@@ -13,6 +16,7 @@ import VPostsList from './components/VPostsList.vue'
     <VCounter />
     <VTodoList/>
     <VPostsList/>
+    <VUsersList/>
   </main>
 </template>
 
