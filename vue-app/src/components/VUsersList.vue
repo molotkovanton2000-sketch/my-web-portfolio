@@ -43,11 +43,13 @@ onMounted(() => {
             <h2>Список пользователей</h2>
             <ul class="users-list">
                 <li v-for="user in users" :key="user.id" class="user-item">
-                    <h3>Name: {{ user.name }}</h3>
-                    <p>✉️ Email: {{ user.email }}</p>
-                    <p>📞 Phone: {{ user.phone }}</p>
-                    <p>🌐 Website: {{ user.website }}</p>
-                    <p>🏢 Company: {{ user.company.name }}</p>                  
+                    <router-link :to="{ name:'user', params: {id: user.id} }">
+                        <h3>Name: {{ user.name }}</h3>
+                        <p>✉️ Email: {{ user.email }}</p>
+                        <p>📞 Phone: {{ user.phone }}</p>
+                        <p>🌐 Website: {{ user.website }}</p>
+                        <p>🏢 Company: {{ user.company.name }}</p>      
+                    </router-link>               
                 </li>
             </ul>
         </div>

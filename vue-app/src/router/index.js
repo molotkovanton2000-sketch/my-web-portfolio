@@ -4,6 +4,7 @@ import VUsersList from "../components/VUsersList.vue"
 import VAboutPage from "../components/VAboutPage.vue"
 import VSandboxPage from "../components/VSandboxPage.vue"
 import VPostPage from "../components/VPostPage.vue"
+import VUserPage from "@/components/VUserPage.vue"
 
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
         path: '/posts/:id',
         name: 'post',
         component: VPostPage
+    },
+    {
+        path:'/users/:id',
+        name:'user',
+        component: VUserPage
     }
 ]
 
