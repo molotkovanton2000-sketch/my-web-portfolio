@@ -8,6 +8,8 @@
             <router-link to="/" class="nav-link">Главная</router-link>
             <router-link to="/posts" class="nav-link">Посты</router-link>
             <router-link to="/users" class="nav-link">Пользователи</router-link>
+            <router-link to="/about" class="nav-link">О проекте</router-link>
+            <router-link to="/sandbox" class="nav-link">Песочница</router-link>
         </nav>
 
         <!-- Здесь будет отображаться текущая страница -->
