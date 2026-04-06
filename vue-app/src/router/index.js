@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router"
 import VPostsList from "../components/VPostsList.vue"
 import VUsersList from "../components/VUsersList.vue"
-import VAboutPage from "@/components/VAboutPage.vue"
-import VSandboxPage from "@/components/VSandboxPage.vue"
+import VAboutPage from "../components/VAboutPage.vue"
+import VSandboxPage from "../components/VSandboxPage.vue"
+import VPostPage from "../components/VPostPage.vue"
 
 
 const routes = [
@@ -30,8 +31,14 @@ const routes = [
         path:'/sandbox',
         name:'sandbox',
         component: VSandboxPage
+    },
+    {
+        path: '/posts/:id',
+        name: 'post',
+        component: VPostPage
     }
 ]
+
 
 
 const router = createRouter({

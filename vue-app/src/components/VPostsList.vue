@@ -40,7 +40,9 @@ onMounted (() => {
             <h2>Список постов</h2>
             <ul class="posts-list">
                 <li v-for="post in posts" :key="post.id" class="post-item">
-                    <h3>{{ post.title }}</h3>
+                    <router-link :to="{ name:'post', params: {id: post.id} }"> 
+                        <h3 >{{ post.title }}</h3>
+                    </router-link>
                     <p>{{ post.body }}</p>
                 </li>
             </ul>
