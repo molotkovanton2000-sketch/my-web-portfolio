@@ -10,7 +10,8 @@ const components = [
     { name: 'VUserPage', description: 'Страница пользователя + его посты', date: '06.04.2026' },
     { name: 'VCounter', description: 'Счётчик', date: '03.04.2026' },
     { name: 'VTodoList', description: 'Список задач', date: '04.04.2026' },
-    { name: 'VSandboxPage', description: 'Песочница', date: '05.04.2026' }
+    { name: 'VSandboxPage', description: 'Песочница', date: '05.04.2026' },
+    { name: 'VAddPostPage', description: 'Форма добавления поста (POST-запросы)', date: '08.04.2026' }
 ]
 </script>
 

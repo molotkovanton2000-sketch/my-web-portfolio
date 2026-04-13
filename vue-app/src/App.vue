@@ -1,8 +1,11 @@
 <script setup>
+import { useThemeStore } from './stores/theme'
+
+const themeStore = useThemeStore()
 </script>
 
 <template>
-    <div class="app">
+    <div class="app" :class="{ dark: themeStore.isDark }">
         <!-- Навигация -->
         <nav class="navbar">
             <router-link to="/" class="nav-link">Главная</router-link>
@@ -11,6 +14,9 @@
             <router-link to="/users" class="nav-link">Пользователи</router-link>
             <router-link to="/about" class="nav-link">О проекте</router-link>
             <router-link to="/sandbox" class="nav-link">Песочница</router-link>
+            <button @click="themeStore.toggleTheme" class="theme-toggle">
+                {{ themeStore.isDark ? '☀️' : '🌙' }}
+            </button>
         </nav>
 
         <!-- Здесь будет отображаться текущая страница -->
@@ -55,5 +61,40 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+/* Стили для тёмной темы */
+.app.dark {
+    background-color: #1a1a2e;
+}
+
+.app.dark .navbar {
+    background-color: #16213e;
+}
+
+.app.dark .nav-link {
+    color: #e0e0e0;
+}
+
+.app.dark .nav-link:hover {
+    background-color: #1f3460;
+}
+
+.app.dark .router-link-active {
+    background-color: #42b983;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #34495e;
 }
 </style>
