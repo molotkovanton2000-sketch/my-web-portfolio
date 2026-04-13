@@ -60,11 +60,13 @@ onMounted(() => {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .error-message {
     color: #e74c3c;
-    background-color: #fdecea;
+    background-color: var(--error-bg);
     padding: 10px;
     border-radius: 8px;
     border-left: 4px solid #e74c3c;
@@ -76,11 +78,11 @@ onMounted(() => {
 }
 
 .user-item {
-    background: #f9f9f9;
+    background: var(--card-bg);
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #eee;
+    border: 1px solid var(--card-border);
     transition: all 0.2s ease;
 
     &:hover {
@@ -89,27 +91,22 @@ onMounted(() => {
 
     h3 {
         margin: 0 0 10px 0;
-        color: #2c3e50;
+        color: var(--text-color);
     }
 
     p {
         margin: 0;
-        color: #34495e;
+        color: var(--text-light);
         line-height: 1.5;
     }
 }
-.no-users{
-    color: #000000;
-    background-color: #fdecea;
+
+.no-users,
+.message-loading {
+    color: var(--text-color);
+    background-color: var(--card-bg);
     padding: 10px;
     border-radius: 8px;
-    border-left: 4px solid #000000;
-}
-.message-loading{
-    color: #000000;
-    background-color: #fdecea;
-    padding: 10px;
-    border-radius: 8px;
-    border-left: 4px solid #000000;
+    border-left: 4px solid #42b983;
 }
 </style>

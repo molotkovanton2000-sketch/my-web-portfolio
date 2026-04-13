@@ -50,47 +50,62 @@ onMounted (() => {
     </div>
 </template>
 
-<style lang="scss" scoped>
-.posts-container {
+<style scoped>
+.post-page {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.error-message {
+.error {
     color: #e74c3c;
-    background-color: #fdecea;
-    padding: 10px;
-    border-radius: 8px;
-    border-left: 4px solid #e74c3c;
 }
 
-.posts-list {
-    list-style: none;
+.comments-section {
+    margin-top: 40px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 20px;
+}
+
+.comment {
+    background: var(--card-bg);
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 3px solid #42b983;
+}
+
+.comment strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-color);
+}
+
+.comment small {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.comment p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #42b983;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
     padding: 0;
 }
 
-.post-item {
-    background: #f9f9f9;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #eee;
-    transition: all 0.2s ease;
-
-    &:hover {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h3 {
-        margin: 0 0 10px 0;
-        color: #2c3e50;
-    }
-
-    p {
-        margin: 0;
-        color: #34495e;
-        line-height: 1.5;
-    }
+.back-btn:hover {
+    text-decoration: underline;
 }
 </style>

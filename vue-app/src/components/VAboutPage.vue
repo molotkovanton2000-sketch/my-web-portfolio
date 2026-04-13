@@ -1,17 +1,18 @@
 <script setup>
 const projectStartDate = 'Апрель 2026'
-const techStack = ['Vue 3', 'Vue Router', 'SCSS', 'Vite', 'JSONPlaceholder API']
+const techStack = ['Vue 3', 'Vue Router', 'Pinia', 'SCSS', 'Vite', 'JSONPlaceholder API']
 const lastUpdated = new Date().toLocaleDateString('ru-RU')
 const components = [
     { name: 'VHomePage', description: 'Главная страница', date: '04.04.2026' },
-    { name: 'VPostsList', description: 'Список постов (API)', date: '05.04.2026' },
+    { name: 'VPostsList', description: 'Список постов (GET-запросы)', date: '05.04.2026' },
     { name: 'VPostPage', description: 'Страница поста + комментарии', date: '06.04.2026' },
-    { name: 'VUsersList', description: 'Список пользователей (API)', date: '05.04.2026' },
+    { name: 'VUsersList', description: 'Список пользователей (GET-запросы)', date: '05.04.2026' },
     { name: 'VUserPage', description: 'Страница пользователя + его посты', date: '06.04.2026' },
-    { name: 'VCounter', description: 'Счётчик', date: '03.04.2026' },
-    { name: 'VTodoList', description: 'Список задач', date: '04.04.2026' },
-    { name: 'VSandboxPage', description: 'Песочница', date: '05.04.2026' },
-    { name: 'VAddPostPage', description: 'Форма добавления поста (POST-запросы)', date: '08.04.2026' }
+    { name: 'VCounter', description: 'Счётчик + случайное число', date: '03.04.2026' },
+    { name: 'VTodoList', description: 'Список задач + случайная задача', date: '04.04.2026' },
+    { name: 'VSandboxPage', description: 'Песочница (счётчик + тудулист + дата/время)', date: '05.04.2026' },
+    { name: 'VAddPostPage', description: 'Форма добавления поста (POST-запросы)', date: '08.04.2026' },
+    { name: 'Theme Store (Pinia)', description: 'Глобальное хранилище темы (тёмная/светлая)', date: '13.04.2026' }
 ]
 </script>
 
@@ -24,7 +25,7 @@ const components = [
             <p>
                 Это учебное Vue-приложение, созданное для портфолио. 
                 Оно демонстрирует работу с API, маршрутизацию, 
-                реактивные компоненты и адаптивный дизайн.
+                реактивные компоненты, глобальное состояние (Pinia) и адаптивный дизайн.
             </p>
         </section>
 
@@ -59,6 +60,16 @@ const components = [
         </section>
 
         <section class="about-section">
+            <h2>✨ JS-фишки в песочнице</h2>
+            <ul>
+                <li>🎲 Случайное число — кнопка Random в счётчике</li>
+                <li>📅 Живые дата и время — обновляются каждую секунду</li>
+                <li>✨ Случайная задача — добавляет случайную задачу в тудулист</li>
+                <li>🌙 Тёмная тема — переключается кнопкой в навигации, сохраняется в localStorage</li>
+            </ul>
+        </section>
+
+        <section class="about-section">
             <h2>🔗 Ссылки</h2>
             <ul>
                 <li>
@@ -82,20 +93,22 @@ const components = [
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .about-section {
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--card-border);
 
     h2 {
-        color: #2c3e50;
+        color: var(--text-color);
         margin-bottom: 15px;
     }
 
-    p {
-        color: #34495e;
+    p, li {
+        color: var(--text-light);
         line-height: 1.5;
     }
 }
@@ -112,7 +125,7 @@ const components = [
         padding: 6px 14px;
         border-radius: 20px;
         font-size: 14px;
-        color: #2c3e50;
+        color: var(--text-color);
     }
 }
 
@@ -124,19 +137,20 @@ const components = [
     th, td {
         text-align: left;
         padding: 10px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--card-border);
     }
 
     th {
-        background-color: #f5f5f5;
-        color: #2c3e50;
+        background-color: var(--card-bg);
+        color: var(--text-color);
     }
 
     code {
-        background: #f0f0f0;
+        background: var(--input-bg);
         padding: 2px 6px;
         border-radius: 4px;
         font-size: 13px;
+        color: var(--text-color);
     }
 }
 
@@ -147,5 +161,10 @@ a {
     &:hover {
         text-decoration: underline;
     }
+}
+
+.updated {
+    margin-top: 20px;
+    color: var(--text-light);
 }
 </style>

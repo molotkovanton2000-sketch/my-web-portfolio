@@ -26,14 +26,47 @@ const themeStore = useThemeStore()
     </div>
 </template>
 
+<style>
+/* Светлая тема (по умолчанию) */
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #2c3e50;
+    --text-light: #34495e;
+    --card-bg: #f9f9f9;
+    --card-border: #eee;
+    --navbar-bg: #2c3e50;
+    --navbar-link-hover: #34495e;
+    --input-bg: white;
+    --input-border: #ddd;
+    --success-bg: #e8f8f5;
+    --error-bg: #fdecea;
+}
+
+/* Тёмная тема */
+.app.dark {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --text-light: #b0b0b0;
+    --card-bg: #16213e;
+    --card-border: #1f3460;
+    --navbar-bg: #0f3460;
+    --navbar-link-hover: #1a4a8a;
+    --input-bg: #0f3460;
+    --input-border: #1f3460;
+    --success-bg: #0a2a1a;
+    --error-bg: #3a1a1a;
+}
+</style>
+
 <style scoped>
 .app {
     min-height: 100vh;
-    background-color: #f5f5f5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .navbar {
-    background-color: #2c3e50;
+    background-color: var(--navbar-bg);
     padding: 15px 20px;
     display: flex;
     gap: 20px;
@@ -46,10 +79,10 @@ const themeStore = useThemeStore()
     padding: 8px 16px;
     border-radius: 8px;
     transition: background-color 0.2s ease;
+}
 
-    &:hover {
-        background-color: #34495e;
-    }
+.nav-link:hover {
+    background-color: var(--navbar-link-hover);
 }
 
 /* Активная ссылка (подсветка) */
@@ -63,27 +96,6 @@ const themeStore = useThemeStore()
     padding: 20px;
 }
 
-/* Стили для тёмной темы */
-.app.dark {
-    background-color: #1a1a2e;
-}
-
-.app.dark .navbar {
-    background-color: #16213e;
-}
-
-.app.dark .nav-link {
-    color: #e0e0e0;
-}
-
-.app.dark .nav-link:hover {
-    background-color: #1f3460;
-}
-
-.app.dark .router-link-active {
-    background-color: #42b983;
-}
-
 .theme-toggle {
     background: none;
     border: none;
@@ -92,9 +104,10 @@ const themeStore = useThemeStore()
     padding: 8px 16px;
     border-radius: 8px;
     transition: background-color 0.2s ease;
+    color: white;
 }
 
 .theme-toggle:hover {
-    background-color: #34495e;
+    background-color: var(--navbar-link-hover);
 }
 </style>

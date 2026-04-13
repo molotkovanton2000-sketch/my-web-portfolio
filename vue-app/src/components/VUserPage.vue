@@ -109,6 +109,8 @@ onMounted(() => {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .back-btn {
@@ -130,34 +132,34 @@ onMounted(() => {
 }
 
 .user-info {
-    background: #f9f9f9;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 30px;
-    border: 1px solid #eee;
+    border: 1px solid var(--card-border);
 }
 
 .user-info h1 {
     margin: 0 0 10px 0;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .user-info p {
     margin: 8px 0;
-    color: #34495e;
+    color: var(--text-light);
 }
 
 .user-posts h2 {
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .post-card {
-    background: white;
+    background: var(--card-bg);
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    border: 1px solid #eee;
+    border: 1px solid var(--card-border);
     transition: all 0.2s ease;
 }
 
@@ -167,12 +169,12 @@ onMounted(() => {
 
 .post-card h3 {
     margin: 0 0 8px 0;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .post-card p {
     margin: 0 0 10px 0;
-    color: #34495e;
+    color: var(--text-light);
     line-height: 1.4;
 }
 

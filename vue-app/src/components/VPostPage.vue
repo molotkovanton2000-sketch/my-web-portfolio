@@ -91,18 +91,22 @@ onMounted(() => {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
+
 .error {
     color: #e74c3c;
 }
+
 .comments-section {
     margin-top: 40px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--card-border);
     padding-top: 20px;
 }
 
 .comment {
-    background: #f9f9f9;
+    background: var(--card-bg);
     padding: 12px;
     margin-bottom: 12px;
     border-radius: 8px;
@@ -112,20 +116,21 @@ onMounted(() => {
 .comment strong {
     display: block;
     margin-bottom: 4px;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .comment small {
     display: block;
     margin-bottom: 8px;
-    color: #95a5a6;
+    color: var(--text-light);
     font-size: 12px;
 }
 
 .comment p {
     margin: 0;
-    color: #34495e;
+    color: var(--text-light);
 }
+
 .back-btn {
     background: none;
     border: none;

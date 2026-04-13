@@ -97,6 +97,8 @@ const submitForm = async () => {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .form-group {
@@ -107,16 +109,18 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 input, textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--input-border);
     border-radius: 8px;
     font-size: 16px;
     font-family: inherit;
+    background-color: var(--input-bg);
+    color: var(--text-color);
 }
 
 input:focus, textarea:focus {
@@ -145,7 +149,7 @@ button:disabled {
 
 .error {
     color: #e74c3c;
-    background: #fdecea;
+    background: var(--error-bg);
     padding: 10px;
     border-radius: 8px;
     margin-top: 20px;
@@ -153,10 +157,9 @@ button:disabled {
 
 .success {
     color: #27ae60;
-    background: #e8f8f5;
+    background: var(--success-bg);
     padding: 10px;
     border-radius: 8px;
     margin-top: 20px;
 }
 </style>
-

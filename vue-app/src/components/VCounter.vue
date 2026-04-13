@@ -18,6 +18,11 @@ const reset = () => {
 const value5 = () => {
     count.value += 5
 }
+
+const randomize = () => {
+    count.value = Math.floor(Math.random() * 100)
+}
+
 </script>
 
 <template>
@@ -29,6 +34,7 @@ const value5 = () => {
             <button class="btn btn-minus" @click="decrement">-1</button>
             <button class="btn btn-plus5" @click="value5">+5</button>
             <button class="btn btn-reset" @click="reset">Сброс</button>
+            <button class="btn btn-random" @click="randomize">🎲 Random</button>
         </div>
     </div>
 </template>
@@ -40,10 +46,11 @@ const value5 = () => {
     padding: 30px;
     max-width: 400px;
     border-radius: 16px;
-    background: #f9f9f9;
+    background: var(--card-bg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    h2{
-        color:#2c3e50;
+    
+    h2 {
+        color: var(--text-color);
     }
 }
 
@@ -51,13 +58,14 @@ const value5 = () => {
     font-size: 48px;
     font-weight: bold;
     margin: 20px 0;
-    color: #2c3e50;
+    color: var(--text-color);
 }
 
 .button-group {
     display: flex;
     gap: 12px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -111,6 +119,15 @@ const value5 = () => {
 
     &:hover {
         background-color: #2980b9;
+    }
+}
+
+.btn-random {
+    background-color: #9b59b6;
+    color: white;
+
+    &:hover {
+        background-color: #8e44ad;
     }
 }
 </style>

@@ -44,6 +44,28 @@ const uncompletedFirst = () => {
     todos.value.sort((a, b) => a.done - b.done)
 }
 
+const taskTemplates = [
+    'Купить продукты',
+    'Позвонить маме',
+    'Сделать зарядку',
+    'Прочитать книгу',
+    'Выучить новую фишку JS',
+    'Написать пост в блог',
+    'Разобрать почту',
+    'Погулять на свежем воздухе'
+]
+
+const addRandomTodo = () => {
+    const randomIndex = Math.floor(Math.random() * taskTemplates.length)
+    const randomText = taskTemplates[randomIndex]
+    
+    todos.value.push({
+        id: nextId++,
+        text: randomText,
+        done: false
+    })
+}
+
 </script>
 
 <template>
@@ -71,6 +93,7 @@ const uncompletedFirst = () => {
         <button class="action-btn markAllCompleted" @click="markAllCompleted">✔ Отметить всё</button>
         <button class="action-btn completedFirst" @click="completedFirst">Сначала выполненные</button>
         <button class="action-btn uncompletedFirst" @click="uncompletedFirst">Сначала невыполненные</button>
+        <button class="action-btn random-todo" @click="addRandomTodo">✨ Случайная задача</button>
     </div>
     
 </template>
@@ -89,9 +112,11 @@ const uncompletedFirst = () => {
     input {
         flex: 1;
         padding: 10px;
-        border: 1px solid #ddd;
+        border: 1px solid var(--input-border);
         border-radius: 8px;
         font-size: 16px;
+        background-color: var(--input-bg);
+        color: var(--text-color);
 
         &:focus {
             outline: none;
@@ -179,6 +204,15 @@ li button {
 
     &:hover {
         background-color: #e67e22;
+    }
+}
+
+.random-todo {
+    background-color: #e67e22;
+    color: white;
+
+    &:hover {
+        background-color: #d35400;
     }
 }
 </style>
